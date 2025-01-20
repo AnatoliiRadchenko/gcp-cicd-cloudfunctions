@@ -29,4 +29,4 @@ steps:
     _FUNCTION_NAME: my-app-1
     _FUNCTION_REGION: europe-west3
     _FUNCTION_RUNTIME: nodejs20
-    _ENTRY_POINT:  helloWorld
+    _ENTRY_POINT:  helloHttp
