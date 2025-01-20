@@ -4,8 +4,9 @@
 steps:
   options:
     logging: CLOUD_LOGGING_ONLY
-  - id: "BUILD"
-    name: "gce.io/google.com/cloudsdktool/cloud.sdk"
+- name: "gce.io/google.com/cloudsdktool/cloud.sdk"
+  id: "BUILD"
+    
     args: ["echo","Building..."]
   - id: "TEST"
     name: "gce.io/google.com/cloudsdktool/cloud.sdk"
