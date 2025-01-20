@@ -2,32 +2,6 @@
 #
 
 steps:
-options:
-  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
 - name: "gce.io/google.com/cloudsdktool/cloud.sdk"
   id: "BUILD"
   args: ["echo","Building..."]
-  - id: "TEST"
-    name: "gce.io/google.com/cloudsdktool/cloud.sdk"
-    args: ["echo","Testing..."]
-  - id: "DEPLOY"
-    name: "gce.io/google.com/cloudsdktool/cloud.sdk"
-    args: 
-    - gcloud
-    - functions
-    - deploy
-    - $_FUNCTION_NAME
-    - --region=$_FUNCTION_REGION
-    - --source=.
-    - --trigger-http
-    - --runtime=$_FUNCTION_RUNTIME
-    - --project=$_FUNCTION_PROJECT
-    - --entry-point=$_ENTRY_OPINT
-    
-
-substitutions:
-    _FUNCTION_PROJECT: Libra
-    _FUNCTION_NAME: my-app-1
-    _FUNCTION_REGION: europe-west3
-    _FUNCTION_RUNTIME: nodejs20
-    _ENTRY_POINT:  helloHttp
