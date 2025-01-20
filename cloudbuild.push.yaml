@@ -3,7 +3,7 @@
 
 steps:
 options:
-  default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
+  default_logs_bucket_behavior: 0
 - name: "gce.io/google.com/cloudsdktool/cloud.sdk"
   args: ["echo","Building..."]
 substitutions:
