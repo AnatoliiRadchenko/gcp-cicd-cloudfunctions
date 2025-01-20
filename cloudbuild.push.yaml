@@ -24,7 +24,7 @@ steps:
   - --entry-point=$_ENTRY_OPINT
   id: DEPLOY
 
-  sunstitutions:
+  substitutions:
     _FUNCTION_PROJECT: Libra
     _FUNCTION_NAME: my-app-1
     _FUNCTION_REGION: europe-west3
