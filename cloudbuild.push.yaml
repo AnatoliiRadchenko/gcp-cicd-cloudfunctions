@@ -6,8 +6,7 @@ options:
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
 - name: "gce.io/google.com/cloudsdktool/cloud.sdk"
   id: "BUILD"
-    
-    args: ["echo","Building..."]
+  args: ["echo","Building..."]
   - id: "TEST"
     name: "gce.io/google.com/cloudsdktool/cloud.sdk"
     args: ["echo","Testing..."]
