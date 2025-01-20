@@ -5,5 +5,4 @@ steps:
 options:
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
 - name: "gce.io/google.com/cloudsdktool/cloud.sdk"
-  id: "BUILD"
   args: ["echo","Building..."]
