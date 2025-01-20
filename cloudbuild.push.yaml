@@ -2,17 +2,20 @@
 #
 
 steps:
-  - name: 'gce.io/google.com/cloudsdktool/cloud.sdk'
+  - id: BUILD
+    name: 'gce.io/google.com/cloudsdktool/cloud.sdk'
     args: ['echo','Building...']
-    id: BUILD
+    
   options:
     logging: CLOUD_LOGGING_ONLY
   
-  - name: 'gce.io/google.com/cloudsdktool/cloud.sdk'
+  - id: TEST
+    name: 'gce.io/google.com/cloudsdktool/cloud.sdk'
     args: ['echo','Testing...']
-    id: TEST
+    
   
-  - name: 'gce.io/google.com/cloudsdktool/cloud.sdk'
+  - id: DEPLOY
+    name: 'gce.io/google.com/cloudsdktool/cloud.sdk'
     args: 
     - gcloud
     - functions
@@ -24,7 +27,7 @@ steps:
     - --runtime=$_FUNCTION_RUNTIME
     - --project=$_FUNCTION_PROJECT
     - --entry-point=$_ENTRY_OPINT
-    id: DEPLOY
+    
 
 substitutions:
     _FUNCTION_PROJECT: Libra
