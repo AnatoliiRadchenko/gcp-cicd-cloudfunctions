@@ -3,7 +3,7 @@
 
 steps:
 options:
-  default_logs_bucket_behavior: CLOUD_LOGGING_ONLY
+  logging: CLOUD_LOGGING_ONLY
 - name: "gce.io/google.com/cloudsdktool/cloud.sdk"
   args: ["echo","Building..."]
 substitutions:
