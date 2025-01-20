@@ -1,0 +1,32 @@
+# cloudbuild will be triggered by push to staging branch
+#
+
+steps:
+- name: 'gce.io/google.com/cloudsdktool/cloud.sdk'
+  args: ['echo','Building...']
+  id: BUILD
+
+- name: 'gce.io/google.com/cloudsdktool/cloud.sdk'
+  args: ['echo','Testing...']
+  id: TEST
+
+- name: 'gce.io/google.com/cloudsdktool/cloud.sdk'
+  args: 
+  - gcloud
+  - functions
+  - deploy
+  - $_FUNCTION_NAME
+  - --region=$_FUNCTION_REGION
+  - --source=.
+  - --trigger-http
+  - --runtime=$_FUNCTION_RUNTIME
+  - --project=$_FUNCTION_PROJECT
+  - --entry-point=$_ENTRY_OPINT
+  id: DEPLOY
+
+  sunstitutions:
+    _FUNCTION_PROJECT: Libra
+    _FUNCTION_NAME: my-app-1
+    _FUNCTION_REGION: europe-west3
+    _FUNCTION_RUNTIME: nodejs20
+    _ENTRY_POINT:  helloWorld
