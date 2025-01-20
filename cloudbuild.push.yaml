@@ -6,7 +6,7 @@ steps:
   args: ['echo','Building...']
   id: BUILD
 options:
-  logging: CLOUD_LOGGING_ONLY
+  logging: NONE
 
 - name: 'gce.io/google.com/cloudsdktool/cloud.sdk'
   args: ['echo','Testing...']
